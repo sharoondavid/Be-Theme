@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link-Be Be</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <style>
+        
+
+div#container {
+  width: 400px;
+  height: 300px;
+  perspective: 1200px;
+  font-size: 0;
+  margin-bottom: 3rem;
+  border: 0px solid red;
+  margin: 40px auto 0;
+}
+
+div#SpinWheel {
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: 1s;
+  position: absolute;
+  border: 0px solid red;
+}
+
+div#SpinWheel figure {
+  width: 100%;
+  position: absolute;
+  left: -13%;
+  outline: 1px solid transparent;
+  overflow: hidden;
+  transition: 1s;
+  border-top: 1px solid #fff;
+  border-left: 1px solid #999;
+  border-right: 1px solid #999;
+  box-shadow: 0 2px 0 #999;
+}
+
+/* div#SpinWheel.no-backface figure {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+} */
+
+/* div#SpinWheel figure.focus {
+  width: 106%;
+  left: -16%;
+  margin-top: -3rem;
+} */
+
+div#SpinWheel figure img {
+  width: 100%;
+}
+
+figcaption {
+    position: absolute;
+    /* top: 100%; */
+    /* width: 100%; */
+    /* padding: 0.2rem; */
+    /* z-index: 2; */
+    /* font-size: 1rem; */
+    /* background: rgba(0, 0, 0, 0); */
+    /* transition: 0.6s; */
+}
+
+div#SpinWheel figure.current:hover figcaption,
+div#SpinWheel figure.current.caption figcaption {
+  top: 85%;
+  background: rgba(0, 0, 0, 0.5);
+  bottom: 0;
+}
+
+div#container ~ span {
+  color: #333;
+  margin: 5%;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  transition: 0.6s color;
+  position: relative;
+  margin-top: -10rem;
+  border-bottom: none;
+  line-height: 0;
+}
+
+div#container ~ span:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
+.ss-icon {
+  color: #444;
+  position: absolute;
+  padding: 1em 1em;
+  cursor: pointer;
+  background: #ccc;
+  border-radius: 5px;
+  border-top: 1px solid #fff;
+  border-left: 1px solid #999;
+  border-right: 1px solid #999;
+  box-shadow: 0 5px 0 #999;
+  transition: box-shadow 0.1s, top 0.1s;
+}
+
+.ss-icon.left {
+  float: left;
+}
+
+.ss-icon.right {
+  float: right;
+}
+
+
+    </style>
+
+</head>
+
+<body>
+
+    <section class="sec-1">
+        <div class="container contain-1">
+            <div class="row row-1 pt-3">
+                <div class="col-lg-6 col-md-8 col-sm-12">
+                    <ul class="link-1 list-inline">
+                        <li class="list-inline-item">
+                            <h6 class="text-light para-1">Have any questions?</h6>
+                        </li>
+
+                        <li class="list-inline-item px-2">
+                            <a href="#"><i class="fa fa-phone text-muted" aria-hidden="true"></i>+123 563
+                                653</a>
+                        </li>
+
+                        <li class="list-inline-item px-2">
+                            <a href="#"><i class="fa fa-envelope-o text-muted" aria-hidden="true"></i>nova@gamil.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div class="link-2 col-lg-6 col-md-4 col-sm-12 d-flex justify-content-end">
+                    <a class="text-muted px-2" href="#"><i class="fa fa-skype" aria-hidden="true"></i></a>
+                    <a class="text-muted px-2" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a class="text-muted px-2" href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                    <a class="text-muted px-2" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    <a class="text-muted px-2" href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light ">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="images/betheme.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0  link-3">
+                    <li class="nav-item">
+                        <a class="nav-link text-primary active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-primary" href="link.html">Link</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-primary" href="portfolio.html">Portfolio</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-primary" href="about.html">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-primary" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-primary" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <section class="bg-light">
+        <div class="container">
+            <div class="row pt-3 pb-3">
+                <div class="col-lg-12 text-center">
+                    <h1>About</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h2 class="text-primary">Our company</h2>
+                    <p class="text-secondary">We are Muffin group and we love what we do. We are located in Europe and
+                        reply always within 24 hours.
+
+                        Donec ullamcorper nulla non metus auctor fringilla. Sed posuere consectetur est at lobortis.
+                        Morbi leo risus , porta ac consect etur.</p>
+                </div>
+
+                <div class="col-lg-4">
+                    <h2 class="text-primary">Mission</h2>
+                    <p class="text-secondary">Our mission is very clear - provide best and fully tested products and
+                        solutions for our customers.
+
+                        Donec ullamcorper nulla non metus auctor fringilla. Sed posuere consectetur est at lobortis.
+                        Morbi leo risus, porta ac consectetur ac.</p>
+                </div>
+
+                <div class="col-lg-4">
+                    <h2 class="text-primary">Passion</h2>
+                    <p class="text-secondary">We love working with WordPress. Themes based on this web software gives
+                        unlimited possibilities.
+
+                        Donec ullamcorper nulla non metus auctor fringilla. Sed posuere consectetur est at lobortis.
+                        Morbi leo risus, porta ac consectetur ac.</p>
+                </div>
+
+            </div>
+            <hr>
+        </div>
+        
+    </section>
+
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <h2>We provide awesomness!</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="container">
+        <div id="SpinWheel">
+          <figure>
+            <img src="images/betheme-about-pic1-1200x860.jpg" alt="1">
+            <figcaption>1</figcaption>
+          </figure>
+          <figure>
+            <img src="images/betheme-about-pic2-1200x860.jpg" alt="2">
+            <figcaption>11</figcaption>
+          </figure>
+          <figure>
+            <img src="images/betheme-about-pic3-1200x860.jpg" alt="3">
+            <figcaption>21</figcaption>
+          </figure>
+        </div>
+      </div>
+    
+      <span id='previous' data-increment='-1' class='ss-icon left'>&lt;</span>
+      <span id='next' data-increment='1' class='ss-icon right'>&gt;</span>
+
+      <section class="sec-5">
+        <div class="container pt-5 pb-5">
+            <div class="row text-center">
+                <div class="col-lg-12">
+                    <h2 class="para-2">The biggest WordPress theme ever</h2>
+                </div>
+            </div>
+
+            <div class="row text-center para-3-4 pt-5">
+                <div class="col-lg-3 col-md-6">
+                    <h2 class="para-3">600+</h2>
+                    <h4 class="para-4">pre-built websites</h4>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h2 class="para-3">11+</h2>
+                    <h4 class="para-4">header styles</h4>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h2 class="para-3">200+</h2>
+                    <h4 class="para-4">shortcodes</h4>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h2 class="para-3">200k</h2>
+                    <h4 class="para-4">happy clients</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="sec-12 pt-5 pb-5">
+        <div class="container">
+            <div class="row pt-4 pb-4">
+                <div class="col-lg-12 text-center">
+                    <h2 class="text-light">Purchase Betheme & Get Started Today</h2>
+                </div>
+            </div>
+            <div class="row pt-5 pb-5">
+                <div class="col-lg-3 col-md-4 col-sm-4">
+                    <h3 class="text-secondary">Useful links</h3>
+                    <ul class="list-inline useful-links d-flex flex-column">
+                        <li class="list-inline-item pt-2"><a class="text-light" href="#"><i class="fa fa-star-o"
+                                    aria-hidden="true"></i>
+                                Lorem ipsum </a></li>
+                        <li class="list-inline-item pt-2"><a class="text-light" href="#"><i class="fa fa-star-o"
+                                    aria-hidden="true"></i>
+                                Etiam ullamcorper</a></li>
+                        <li class="list-inline-item pt-2"><a class="text-light" href="#"><i class="fa fa-star-o"
+                                    aria-hidden="true"></i>
+                                Maecenas lectus</a></li>
+                        <li class="list-inline-item pt-2"><a class="text-light" href="#"><i class="fa fa-star-o"
+                                    aria-hidden="true"></i>
+                                Curabitur ligula</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-4">
+                    <h3 class="text-secondary">Services</h3>
+                    <ul class="list-inline useful-links d-flex flex-column ">
+                        <li class="list-inline-item pt-2"><a class="text-light" href="#"><i class="fa fa-star-o"
+                                    aria-hidden="true"></i>
+                                Lorem ipsum </a></li>
+                        <li class="list-inline-item pt-2"><a class="text-light" href="#"><i class="fa fa-star-o"
+                                    aria-hidden="true"></i>
+                                Etiam ullamcorper</a></li>
+                        <li class="list-inline-item pt-2"><a class="text-light" href="#"><i class="fa fa-star-o"
+                                    aria-hidden="true"></i>
+                                Maecenas lectus</a></li>
+                        <li class="list-inline-item pt-2"><a class="text-light" href="#"><i class="fa fa-star-o"
+                                    aria-hidden="true"></i>
+                                Curabitur ligula</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-4 useful-links">
+                    <h3 class="text-secondary">Contact info</h3>
+                    <p class="text-light">Envato,<br>
+                        Level 13, 2 Elizabeth St,
+                        Melbourne, Victoria 3000,
+                        Australia</p>
+                    <span><a class="text-light" href="#">+61 (0) 383 766 284</a></span>
+                    <br>
+                    <span><a class="text-light" href="#">noreply@envato.com</a></span>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-4 text-secondary useful-links">
+                    <h3>Our Services</h3>
+                    <a href="#"><i class="fa fa-facebook text-light" aria-hidden="true"></i>
+                    </a>
+                    <a href="#"><i class="fa fa-instagram text-light" aria-hidden="true"></i>
+                    </a>
+                    <a href="#"><i class="fa fa-pinterest-p text-light" aria-hidden="true"></i>
+                    </a>
+                    <a href="#"><i class="fa fa-linkedin text-light" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+
+    <section class="bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-light text-center">
+                    <span>© 2014 - 2022 by Be BeTheme</span>
+                </div>
+            </div>
+    </section>
+
+
+
+<script>
+    function SpinWheel(ele) {
+  this.element = ele;
+  this.rotation = 0;
+  this.totalPanels = this.element.children.length;
+  this.angle = 0;
+
+  this.isHorizontal = true;
+}
+
+SpinWheel.prototype.update = function () {
+  var panel, angle, i, panelClick;
+
+  this.panelSize = this.element[
+    this.isHorizontal ? "offsetWidth" : "offsetHeight"
+  ];
+  //console.log(this.element[this.isHorizontal ? 'offsetWidth' : 'offsetHeight']);
+  this.rotateAxis = this.isHorizontal ? "rotateY" : "rotateX";
+  this.angle = 360 / this.totalPanels;
+
+  panelClick = function (event) {
+    var panel = event.target.parentElement;
+    if (panel.className.replace(/\s/g, "") === "current")
+      panel.setAttribute("class", "focus");
+    else if (panel.className === "focus")
+      panel.setAttribute("class", "current");
+    console.log(panel.className);
+  };
+
+  // calc how big
+  this.radius =
+    Math.round(this.panelSize / 2 / Math.tan(Math.PI / this.totalPanels)) + 75;
+
+  for (i = 0; i < this.totalPanels; i++) {
+    panel = this.element.children[i];
+    angle = this.angle * i;
+    // rotate panel, then push it out
+    panel.style.transform =
+      this.rotateAxis + "(" + angle + "deg) translateZ(" + this.radius + "px)";
+    //console.log(this.radius);
+    panel.addEventListener("click", panelClick, false);
+  }
+
+  // adjust rotation
+  this.rotation = Math.round(this.rotation / this.angle) * this.angle;
+
+  this.make();
+};
+
+SpinWheel.prototype.make = function () {
+  var relRotation = this.rotation % 360;
+  var index = Math.round(relRotation / this.angle);
+  //console.log(index);
+  var child = this.element.children;
+  for (var i = 0; i < child.length; i++) {
+    var a = child[i].setAttribute("class", "");
+  }
+  this.element.children[Math.abs(index)].setAttribute("class", "current");
+  this.element.style.transform =
+    "translateZ(-" +
+    this.radius +
+    "px) " +
+    this.rotateAxis +
+    "(" +
+    this.rotation +
+    "deg)";
+};
+
+var init = function () {
+  var wheel = new SpinWheel(document.getElementById("SpinWheel")),
+    panelCountInput = document.querySelector("#SpinWheel figure").length,
+    navBtns = document.querySelectorAll("span.ss-icon"),
+    onNavClick = function (event) {
+      var increment = parseInt(event.target.getAttribute("data-increment"));
+
+      wheel.rotation += wheel.angle * increment;
+      wheel.make();
+    };
+
+  // populate on load
+  wheel.panelCount = panelCountInput;
+  wheel.update();
+
+  for (var i = 0; i < 2; i++) {
+    navBtns[i].addEventListener("click", onNavClick, false);
+  }
+};
+
+window.addEventListener("DOMContentLoaded", init, false);
+
+// == DOM Utility Functions from PastryKit == //
+Element.prototype.hasClassName = function (a) {
+  return new RegExp("(?:^|\\s+)" + a + "(?:\\s+|$)").test(this.className);
+};
+
+Element.prototype.addClassName = function (a) {
+  if (!this.hasClassName(a)) {
+    this.className = [this.className, a].join(" ");
+  }
+};
+
+Element.prototype.removeClassName = function (b) {
+  if (this.hasClassName(b)) {
+    var a = this.className;
+    this.className = a.replace(
+      new RegExp("(?:^|\\s+)" + b + "(?:\\s+|$)", "g"),
+      " "
+    );
+  }
+};
+
+Element.prototype.toggleClassName = function (a) {
+  this[this.hasClassName(a) ? "removeClassName" : "addClassName"](a);
+};
+
+</script>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

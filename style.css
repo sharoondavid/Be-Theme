@@ -1,0 +1,166 @@
+.sec-1{
+    background-color: #292B33; 
+}
+
+.link-1 a{
+    color: #0188FF;
+    text-decoration: none;
+}
+.link-2 a i:hover{
+    color: #fff;
+}
+.link-3 a {
+    font-size: 20px;
+    padding: 18px;
+    cursor: pointer;
+}
+
+.sec-3{
+    background-image: linear-gradient(rgb(16, 16, 18), rgb(23, 31,70)), url(images/betheme-slider-bg4.png);
+    height: 600px;
+}
+.row-3{
+    position: absolute;
+    top: 45%;
+    text-align: center;
+}
+.row-3 h1{
+    font-size: 50px;
+}
+.row-3 h3{
+    font-size: 32px;
+    line-height: 1.5em;
+}
+@media (max-width:1199px) {
+    .para-1{
+        font-size: 12px;
+        padding-top: 5px;
+    }
+    h2.para-3 {
+        font-size: 90px;
+    }
+    h4.para-4{
+        padding-right: 14px;
+    }
+    .para-3-4{
+        padding-bottom: 2em;
+        padding-top: 2em;
+    }
+    .card-para{
+        font-size: 26px;
+    }
+    .link-3 a {
+        font-size: 18px;
+        padding: 10px;
+    }
+    
+    
+}
+
+@media (max-width:991px) {
+   .row-4{
+       font-size: 12px;
+   }
+   /* .header-links{
+    justify-content: flex-end!important;
+    } */
+    .card-text{
+        font-size: 13px;
+    }
+    .link-3 a {
+        font-size: 16px;
+        padding: 0px;
+    }
+}
+
+@media (max-width:767px) {
+    .row-4{
+        padding-top: none;
+        padding-bottom: 0;
+    }
+    .useful-links{
+        font-size: 14px;
+    }
+    ul.link-1.d-flex.list-inline{
+        display: table-row-group;
+    }
+    .link-2.col-lg-6.col-md-4.col-sm-12.d-flex.justify-content-end{
+        text-align: center;
+    }
+    .row-3 h3 {
+        font-size: 26px;
+    }
+ }
+
+.sec-5{
+    background-color: #F3F3F3;
+}
+.para-2{
+    font-size: 40px;
+}
+.para-3{
+    font-size: 100px;
+    line-height: 100px;
+    color: #0089F7;
+}
+.para-4{
+    line-height: 30px;
+    padding-right: 24px;
+}
+.sec-6{
+    background-color: #0089F7;
+}
+.para-5{
+    font-size: 35px;
+}
+.sec-10{
+    background-color: #F3F4F4;
+}
+.fa{
+    color: #0089F7;
+    padding-right: 10px;
+}
+.sec-11{
+    background-image: linear-gradient(rgb(16, 16, 18), rgb(23, 31,70)), url(images/betheme-slider-bg4.png);
+
+}
+.para-6{
+    font-size: 17px;
+    font-weight: 300;
+}
+.para-7{
+    font-size: 40px;
+}
+.row-4{
+    border-bottom: 1px solid #555;
+
+}
+.sec-12{
+    background-color: #101015;
+   
+}
+.sec-12 a{
+    text-decoration: none;
+}
+@media (max-width:575px) {
+    .row-3 h1 {
+        font-size: 40px;
+    }
+    .row-3 h3 {
+        font-size: 20px;
+    }
+    .para-2 {
+        font-size: 35px;
+    }
+    .row-4 div{ 
+        width: 50%;
+    }
+    .useful-links{
+        padding-bottom: 10px;
+    }
+}
+@media (max-width:400px) {
+    .row-4 div{ 
+        width: -webkit-fill-available;
+    }
+}
